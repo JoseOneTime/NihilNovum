@@ -1,0 +1,61 @@
+$highlight = #00CED1
+$lowlight = #FF8C00
+$border = #2B6A6C
+
+body
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+
+#header
+	border-radius: 25px
+	padding: 2px 2px 2px 10px
+	position: fixed
+	top: 4px
+	left: 4px
+	right: 15px
+	width: auto
+
+.highlighted
+	background-color: $highlight
+	border: 2px solid $border
+	box-shadow: 10px 10px 5px
+	width: 10%
+
+.date
+	font-style: italic
+
+.name
+	font-weight: bold
+
+.item
+	border: 2px dashed black;
+	margin-top: 8px
+	padding: 5px
+	width: 60%
+
+nav
+	margin-top: 15px
+	padding-right: 10px
+	border: 5px solid $lowlight
+	position: fixed
+	top: 100px
+	left: 5px
+
+#content-wrapper
+	position: absolute
+	top: 100px
+	left: 150px
+	bottom: 30px
+	right: 0px
+	overflow: auto
+
+#content
+	position: inherit
+
+footer
+	position: fixed
+	bottom: 0px
+	left: 0px
+	background-color: $highlight
+	border: 2px solid $border
+	width: 100%
+

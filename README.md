@@ -1,0 +1,4 @@
+NihilNovum
+==========
+
+static website

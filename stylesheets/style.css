@@ -47,6 +47,20 @@ nav {
 #content {
   position: inherit;
 }
+/*
+ * Courtesy of A Softer World, using image sprites for secret div effect
+ */
+#secret {
+  width: 220px;
+  height: 32px;
+  position: fixed;
+  top: 380px;
+  left: 820px;
+  background: url("../res/ShallWePlay.png") 0 -32px;
+}
+#secret:hover {
+  background: url("../res/ShallWePlay.png") 0 0;
+}
 footer {
   position: fixed;
   bottom: 0px;

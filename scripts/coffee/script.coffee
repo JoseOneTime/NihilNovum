@@ -13,17 +13,13 @@ CONGRATS = [
 ]
 SHAPES = ['circle', 'square', 'triangle', 'star']
 COLORS = ['orange', 'purple']
+cardToMatchId = cardToMatchClass = clearThisRound = cardsToGo = null
 deck = []
-cardToMatchId = cardToMatchClass = null
-clearThisRound = false
-cardsToGo = SHAPES.length * COLORS.length * 2
 
 
 $(document).ready ->
   buildDeck()
-  deck = _.shuffle deck
-  assignCardAttrs()
-  progressReport()
+  startNewGame()
 
   $('.card').click ->
   	# why would you click a card that's already flipped, huh?
@@ -51,12 +47,23 @@ $(document).ready ->
       clearCardToMatch()
       clearThisRound = false
 
+  $('#reset').click ->
+    startNewGame()
+
   null
 
 class Card
   constructor : (@color, @shape) ->
 
 
+
+startNewGame = ->
+  deck = _.shuffle deck
+  assignCardAttrs()
+  cardToMatchId = cardToMatchClass = null
+  clearThisRound = false
+  cardsToGo = SHAPES.length * COLORS.length * 2
+  progressReport()
 
 progressReport = ->
   msg = if cardsToGo > 0 then (cardsToGo + " to go!") else randWinMsg()
@@ -88,7 +95,8 @@ assignCardAttrsGuts = (i) ->
   row = Math.floor(i / ROWS) + 1
   col = (i % ROWS) + 1
   $cardElmt = $( "#board div:nth-child(#{row}) div:nth-child(#{col})" )
-  $cardElmt.addClass card.color
-  $cardElmt.addClass card.shape
+  # remove class attribute so thing's don't get wonky on reset
+  $cardElmt.removeAttr 'class'
+  $cardElmt.addClass "card #{card.color} #{card.shape}"
   $cardElmt.attr 'id', i
   null

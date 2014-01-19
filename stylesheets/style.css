@@ -13,7 +13,7 @@ body {
 .highlighted {
   background-color: #00ced1;
   border: 2px solid #2b6a6c;
-  box-shadow: 10px 10px 5px;
+  box-shadow: 10px 10px 5px 0 #000;
   width: 10%;
 }
 .date {
@@ -35,6 +35,18 @@ nav {
   position: fixed;
   top: 100px;
   left: 5px;
+}
+nav ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+li a:hover {
+  text-decoration: underline;
 }
 #content-wrapper {
   position: absolute;
